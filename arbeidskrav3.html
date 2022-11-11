@@ -80,10 +80,24 @@ p-verdien forteller sannynligheten for at null-hypotesen er sann. m2 hadde laves
 <p>Modellene har forskjellig gruppestørrelse. Større samples gir lavere standard error og lavere standardavvik.</p></li>
 <li><p>Why do we use the shaded area in the lower and upper tail of the <em>t</em>-distribution (See Figure @ref(fig:t-dist-fig)).</p>
 <p>Vi ser på det skraverte onmrådet for å se om sannsynligheten for at gjennomsnittet i en sample avviker signifikant fra et kjent gjennomsnitt for populasjonen.</p></li>
-<li><p>Calculate the standard deviation of the <code>estimate</code> variable, and the average of the <code>se</code> variable for each of the study sample sizes (8 and 40). Explain why these numbers are very similar. How can you define the Standard Error (SE) in light of these calculations?</p></li>
-<li><p>Create a histogram (see example code below) of the <em>p</em>-values from each study sample-size. How do you interpret these histograms, what do they tell you about the effect of sample size on statistical power?</p></li>
-<li><p>Calculate the number of studies from each sample size that declare a statistical significant effect (specify a threshold for α, your significance level).</p></li>
-<li><p>Using the <code>pwr</code> package, calculate the power of a one-sample t-test, with a effect size of <code>1.5/3</code>, your specified significance level and sample sizes 8 and 40. Explain the results in the light of your simulations.</p></li>
+<li><p>Calculate the standard deviation of the <code>estimate</code> variable, and the average of the <code>se</code> variable for each of the study sample sizes (8 and 40). Explain why these numbers are very similar. How can you define the Standard Error (SE) in light of these calculations?</p>
+<p>Standardavviket av estimatet for de to studiene er 1,07 (results_8), og 0,484 (results_40). Gjennomsnittet av SE i studiene er henholdsvis 1,02 (results_8) og 0,470 (results_40). Standardavviket og gjennomsnittet er veldig like, når man gjør en studie 1000 ganger fører dette til at standardfeilen og standardavviket til utvalget jevner seg ut, noe som igjen betyr at det er et representativt utvalg. Ut fra disse beregningene kan man se at standardfeilen blir påvirket av utvalgsstørrelsen.</p></li>
+<li><p>Create a histogram (see example code below) of the <em>p</em>-values from each study sample-size. How do you interpret these histograms, what do they tell you about the effect of sample size on statistical power?</p>
+<p>Histogrammet viser at det kan være en større sannsynlighet for å finne antatt ekstreme resultater ved utvalgsstørrelse 40 enn ved 8.</p></li>
+<li><p>Calculate the number of studies from each sample size that declare a statistical significant effect (specify a threshold for α, your significance level).</p>
+<p>I results_8 studien er det 22,7% som erklærer en statistisk signifikant effekt (p &lt; 0,05) mens i results_40 studien vil 86,5% av studiene erklære statitisk signifikant effekt.</p></li>
+<li><p>Using the <code>pwr</code> package, calculate the power of a one-sample t-test, with a effect size of <code>1.5/3</code>, your specified significance level and sample sizes 8 and 40. Explain the results in the light of your simulations.</p>
+<p>Kraften til en t-test til results_8 gruppen gir en statistisk power på 23.2%, kraften til en t-test til results_40 gruppen gir en statistisk power på 86.9%. Dette samsvarer med resultater fra den første simuleringen hvor vi fikk en høyere statistisk power i gruppen med gruppestørrelse 40.</p></li>
+</ol>
+<p>Using the new data frame with results from studies of a population with an average effect of zero, create new histograms.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="arbeidskrav3_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<ol start="8" type="1">
+<li><p>With a significance level of 5%, how many studies would give you a “false positive” result if you did many repeated studies?</p>
+<p>På et signifikantsnivå av 5% ville 4.2% av gruppen med utvalgsstørrelse 8 gi et falskt positiv resultat dersom man hadde repetert studien flere ganger, mens 5.4% av tilfellene villle gitt et falskt positivt resultat ved utvalgsstørrelse 40.</p></li>
 </ol>
 
 </main>
